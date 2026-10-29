@@ -16,7 +16,9 @@ export const questLines: QuestLine[] = [
 const topics: Record<string, { title: string; description: string }> = {
   "initiation/go": { title: "Go 修炼", description: "语言基础、并发模型与运行时机制" },
   "crafts/mysql": { title: "MySQL 工坊", description: "查询、索引、事务、优化与高可用" },
+  "crafts/redis": { title: "Redis 修习", description: "数据结构、缓存设计、并发控制与高可用" },
   "expeditions/kubernetes": { title: "Kubernetes 修习", description: "容器编排、服务治理与集群运维" },
+  "dungeons/distributed": { title: "分布式修习", description: "分布式理论、事务一致性、微服务治理与数据分片" },
   "codex/site": { title: "道场日志", description: "关于本站的构建与迭代记录" },
 };
 

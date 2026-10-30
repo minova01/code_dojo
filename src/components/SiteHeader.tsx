@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeaderTools } from "@/components/HeaderTools";
 import { Search } from "@/components/Search";
 
 export function SiteHeader() {
@@ -14,6 +15,7 @@ export function SiteHeader() {
       <Search />
       <nav aria-label="主导航">
         <Link href="/articles/#initiation">修炼记录</Link>
+        <HeaderTools />
       </nav>
     </header>
   );

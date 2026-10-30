@@ -96,7 +96,7 @@ export function Search() {
             {results && results.length > 0 && (
               <div className="search-results">
                 {results.map((result) => (
-                  <a href={`${basePath}${result.url}`} key={result.url}>
+                  <a href={result.url} key={result.url}>
                     <strong>{result.meta.title}</strong>
                     <span dangerouslySetInnerHTML={{ __html: result.excerpt }} />
                   </a>

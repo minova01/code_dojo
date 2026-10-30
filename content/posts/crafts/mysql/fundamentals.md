@@ -1,7 +1,6 @@
 ---
 title: "MySQL 基础知识"
 description: "MySQL 查询、InnoDB、索引、事务、慢查询优化与主从复制常见面试题。"
-publishedAt: "2026-10-27"
 tags: ["MySQL", "Database", "Backend"]
 draft: false
 ---

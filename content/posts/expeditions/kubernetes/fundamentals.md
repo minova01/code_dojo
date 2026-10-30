@@ -1,7 +1,6 @@
 ---
 title: "Kubernetes 基础知识"
 description: "Kubernetes 架构、应用编排、网络存储与生产排障常见问题。"
-publishedAt: "2026-10-27"
 tags: ["Kubernetes", "Cloud Native", "DevOps"]
 draft: false
 ---

@@ -11,7 +11,6 @@ export type Post = {
   topicSlug: string;
   title: string;
   description: string;
-  publishedAt: string;
   tags: string[];
   content: string;
   outline: string[];
@@ -44,8 +43,8 @@ function readPost(filePath: string): Post | null {
   const source = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(source);
 
-  if (!data.title || !data.description || !data.publishedAt) {
-    throw new Error(`文章 ${relativePath} 缺少 title、description 或 publishedAt`);
+  if (!data.title || !data.description) {
+    throw new Error(`文章 ${relativePath} 缺少 title 或 description`);
   }
 
   if (!lineSlug || !topicSlug || data.draft === true) return null;
@@ -56,7 +55,6 @@ function readPost(filePath: string): Post | null {
     topicSlug,
     title: String(data.title),
     description: String(data.description),
-    publishedAt: String(data.publishedAt),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
     content,
     outline: extractOutline(content),
@@ -67,7 +65,7 @@ export function getPosts(): Post[] {
   return findMarkdownFiles(postsDirectory)
     .map(readPost)
     .filter((post): post is Post => post !== null)
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+    .sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
 export function getPost(slug: string | string[]): Post | undefined {
@@ -106,12 +104,4 @@ export function renderPost(markdown: string): { html: string; headings: Heading[
     html: marked.parse(markdown, { async: false, gfm: true, renderer }),
     headings,
   };
-}
-
-export function formatDate(date: string) {
-  return new Intl.DateTimeFormat("zh-CN", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).format(new Date(`${date}T00:00:00`));
 }

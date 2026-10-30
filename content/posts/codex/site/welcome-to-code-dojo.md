@@ -1,7 +1,6 @@
 ---
 title: "欢迎来到 Code Dojo"
 description: "从一个普通的 Markdown 文件开始，记录搭建个人技术道场的第一步。"
-publishedAt: "2026-10-25"
 tags: ["Next.js", "Markdown", "Web Development"]
 draft: false
 ---

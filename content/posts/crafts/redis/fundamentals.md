@@ -1,7 +1,6 @@
 ---
 title: "Redis 基础知识"
 description: "Redis 数据结构、缓存设计、分布式锁、持久化与高可用常见问题。"
-publishedAt: "2026-10-30"
 tags: ["Redis", "Cache", "Backend"]
 draft: false
 ---

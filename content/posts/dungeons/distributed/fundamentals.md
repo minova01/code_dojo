@@ -1,7 +1,6 @@
 ---
 title: "分布式与微服务基础"
 description: "分布式理论、事务一致性、微服务治理与一致性哈希常见问题。"
-publishedAt: "2026-10-30"
 tags: ["Distributed Systems", "Microservices", "Backend"]
 draft: false
 ---

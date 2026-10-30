@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatDate, getPost, getPosts, renderPost } from "@/lib/posts";
+import { getPost, getPosts, renderPost } from "@/lib/posts";
 import { getQuestLine, getTopic } from "@/lib/quests";
 
 type ArticleParams = { params: Promise<{ slug: string[] }> };
@@ -31,7 +31,6 @@ export default async function ArticlePage({ params }: ArticleParams) {
           <h1 data-pagefind-meta="title">{post.title}</h1>
           <p>{post.description}</p>
           <div className="article-meta">
-            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
             <ul className="tag-list">{post.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
           </div>
         </header>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatDate, type Post } from "@/lib/posts";
+import type { Post } from "@/lib/posts";
 
 export function QuestCard({ post, number }: { post: Post; number: number }) {
   return (
@@ -7,7 +7,6 @@ export function QuestCard({ post, number }: { post: Post; number: number }) {
       <div className="quest-index" aria-hidden="true">Q-{String(number).padStart(2, "0")}</div>
       <div className="quest-copy">
         <div className="quest-meta">
-          <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
           <span>已记录</span>
         </div>
         <h4><Link href={`/articles/${post.slug}/`}>{post.title}</Link></h4>

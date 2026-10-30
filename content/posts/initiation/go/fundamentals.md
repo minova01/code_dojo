@@ -1,7 +1,6 @@
 ---
 title: "Go 基础知识"
 description: "Go 语言基础、并发模型、内存管理与垃圾回收常见知识点。"
-publishedAt: "2026-10-26"
 tags: ["Go", "Backend", "Concurrency"]
 draft: false
 ---

@@ -30,6 +30,11 @@ button, input { font: inherit; }
   position: sticky;
   z-index: 50;
   top: 0;
+  width: 100%;
+  background: var(--bg);
+  border-bottom: 1px solid rgb(48 56 59 / 12%);
+}
+.site-header-inner {
   width: min(var(--content), calc(100% - 40px));
   min-height: 88px;
   margin: 0 auto;
@@ -39,8 +44,6 @@ button, input { font: inherit; }
   justify-content: space-between;
   gap: clamp(28px, 5vw, 72px);
   padding: 8px 0;
-  background: var(--bg);
-  border-bottom: 1px solid rgb(48 56 59 / 12%);
 }
 .brand-block { display: grid; justify-items: start; gap: 3px; }
 .brand {
@@ -59,46 +62,20 @@ button, input { font: inherit; }
 .site-header nav { display: flex; flex-shrink: 0; align-items: center; gap: 18px; font-size: .88rem; font-weight: 650; }
 .site-header nav > a { padding: 8px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
 .site-header nav > a:hover { color: var(--primary-dark); border-color: var(--primary); }
-.header-tools { position: relative; }
-.header-tools summary {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 10px 2px;
-  color: var(--text);
-  cursor: pointer;
-  list-style: none;
-}
-.header-tools summary::-webkit-details-marker { display: none; }
-.header-tools summary > span { width: 4px; height: 4px; background: currentColor; }
-.header-tools summary:hover, .header-tools summary:focus-visible, .header-tools[open] summary { color: var(--primary-dark); }
-.header-tools summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
-.tools-menu {
+.github-corner {
   position: absolute;
-  top: calc(100% + 6px);
+  top: 0;
   right: 0;
-  z-index: 60;
-  min-width: 142px;
-  padding: 7px;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 14px 34px rgb(48 56 59 / 12%);
-  transform: translateY(-5px);
-  transition: opacity .15s ease, transform .15s ease, visibility .15s ease;
+  width: 64px;
+  height: 64px;
+  color: var(--bg);
+  border: 0;
 }
-.tools-menu::before { content: ""; position: absolute; right: 0; bottom: 100%; width: 100%; height: 8px; }
-.header-tools[open] .tools-menu, .header-tools:hover .tools-menu, .header-tools:focus-within .tools-menu {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-.tools-menu a { display: flex; align-items: center; gap: 10px; padding: 9px 10px; color: var(--text); font-size: .78rem; white-space: nowrap; }
-.tools-menu a:hover, .tools-menu a:focus-visible { color: var(--primary-dark); background: color-mix(in srgb, var(--primary) 10%, transparent); outline: none; }
-.tools-menu svg { width: 17px; height: 17px; fill: currentColor; }
+.github-corner svg { display: block; width: 100%; height: 100%; fill: var(--primary); transition: fill .18s ease; }
+.github-corner:hover svg { fill: var(--primary-dark); }
+.github-corner:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.octo-arm { transform-origin: 130px 106px; }
+.github-corner:hover .octo-arm, .github-corner:focus-visible .octo-arm { animation: octocat-wave 560ms ease-in-out; }
 
 .hero {
   min-height: calc(100svh - 88px);
@@ -303,9 +280,18 @@ button, input { font: inherit; }
 @keyframes rise-in { from { opacity: 0; transform: translateY(20px); } }
 @keyframes scene-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
 @keyframes float { 50% { transform: translateX(-50%) translateY(-5px); } }
+@keyframes octocat-wave {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(-25deg); }
+  40%, 80% { transform: rotate(10deg); }
+}
+
+@media (max-width: 1288px) {
+  .site-header-inner { padding-right: 64px; }
+}
 
 @media (max-width: 900px) {
-  .site-header { grid-template-columns: 210px minmax(260px, 1fr) auto; gap: 22px; }
+  .site-header-inner { grid-template-columns: 210px minmax(260px, 1fr) auto; gap: 22px; }
   .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 72px; }
   .hero-copy { max-width: 620px; }
   .dojo-scene { min-height: 480px; }
@@ -317,8 +303,9 @@ button, input { font: inherit; }
 }
 
 @media (max-width: 600px) {
-  .site-header { width: min(100% - 28px, var(--content)); min-height: 0; grid-template-columns: 1fr auto; gap: 12px 18px; padding: 10px 0 12px; }
+  .site-header-inner { width: min(100% - 28px, var(--content)); min-height: 0; grid-template-columns: 1fr auto; gap: 12px 18px; padding: 10px 46px 12px 0; }
   .site-header nav { align-self: start; font-size: .72rem; }
+  .github-corner { width: 52px; height: 52px; }
   .header-search { grid-column: 1 / -1; grid-row: 2; }
   .brand { font-size: .7rem; }
   .start-training { font-size: .62rem; }

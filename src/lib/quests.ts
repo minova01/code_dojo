@@ -10,6 +10,7 @@ export const questLines: QuestLine[] = [
   { slug: "crafts", rank: "第二卷", title: "百工器谱", description: "框架、数据库、中间件与工程工具" },
   { slug: "expeditions", rank: "第三卷", title: "山门守望", description: "云原生、基础设施与系统运维" },
   { slug: "dungeons", rank: "第四卷", title: "实战历练", description: "项目实践、分布式系统设计、架构决策与故障复盘" },
+  { slug: "ai", rank: "别卷", title: "机巧推演", description: "人工智能相关原理、应用与实践" },
   { slug: "codex", rank: "别卷", title: "藏经秘录", description: "开发技巧、速查表与零散笔记" },
 ];
 
@@ -19,6 +20,7 @@ const topics: Record<string, { title: string; description: string }> = {
   "crafts/redis": { title: "Redis 修习", description: "数据结构、缓存设计、并发控制与高可用" },
   "expeditions/kubernetes": { title: "Kubernetes 修习", description: "容器编排、服务治理与集群运维" },
   "dungeons/distributed": { title: "分布式修习", description: "分布式理论、事务一致性、微服务治理与数据分片" },
+  "ai/claude-code": { title: "Claude Code 机制", description: "Agent Loop、上下文管理与 Skill 扩展机制" },
   "codex/site": { title: "道场日志", description: "关于本站的构建与迭代记录" },
 };
 
